@@ -74,6 +74,15 @@
       plugins = [
         pkgs.vimPlugins.nvim-treesitter.withAllGrammars
       ];
+      extraLuaConfig = ''
+        local options = {
+          -- Stop sign for lines greater than 80 symbols
+          colorcolumn = '80',
+        }
+        for k, v in pairs(options) do
+          vim.opt[k] = v
+        end
+      '';
     };
   };
 
