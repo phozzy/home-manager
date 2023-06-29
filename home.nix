@@ -68,9 +68,4 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  # import neovim config
-  imports = [
-    ./neovim/
-  ];
-
 }
