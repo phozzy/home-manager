@@ -66,6 +66,15 @@
   };
 
   # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
+  programs = {
+    home-manager.enable = true;
+    neovim = {
+      enable = true;
+      defaultEditor = true;
+      plugins = [
+        pkgs.vimPlugins.nvim-treesitter.withAllGrammars
+      ];
+    };
+  };
 
 }
