@@ -72,8 +72,9 @@
     neovim = {
       enable = true;
       defaultEditor = true;
-      plugins = [
-        pkgs.vimPlugins.nvim-treesitter.withAllGrammars
+      plugins = with pkgs.vimPlugins; [
+        nvim-treesitter.withAllGrammars
+	catppuccin-nvim
       ];
       extraLuaConfig = ''
         local options = {
@@ -83,6 +84,7 @@
         for k, v in pairs(options) do
           vim.opt[k] = v
         end
+	vim.cmd("colorscheme catppuccin-frappe")
       '';
     };
   };
