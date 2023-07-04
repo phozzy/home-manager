@@ -3,6 +3,7 @@
 
   inputs = {
     # Specify the source of Home Manager and Nixpkgs.
+    nixneovim.url = "github:nixneovim/nixneovim";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -10,17 +11,29 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, ... }:
+  outputs = {
+    nixneovim,
+    nixpkgs,
+    home-manager,
+    ... }:
     let
       system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
+      pkgs = import nixpkgs {
+        inherit system;
+        overlays = [
+          nixneovim.overlays.default
+        ];
+      };
     in {
       homeConfigurations."deck" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
-        modules = [ ./home.nix ];
+        modules = [
+          nixneovim.nixosModules.default
+          ./home.nix
+        ];
 
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix

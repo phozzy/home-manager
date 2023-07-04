@@ -68,24 +68,7 @@
   # Let Home Manager install and manage itself.
   programs = {
     home-manager.enable = true;
-    neovim = {
-      enable = true;
-      defaultEditor = true;
-      plugins = with pkgs.vimPlugins; [
-        nvim-treesitter.withAllGrammars
-        catppuccin-nvim
-      ];
-      extraLuaConfig = ''
-        local options = {
-          -- Stop sign for lines greater than 80 symbols
-          colorcolumn = '80',
-        }
-        for k, v in pairs(options) do
-          vim.opt[k] = v
-        end
-        vim.cmd("colorscheme catppuccin-frappe")
-      '';
-    };
+    nixneovim.enable = true;
   };
 
 }
