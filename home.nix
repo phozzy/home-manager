@@ -68,7 +68,21 @@
   # Let Home Manager install and manage itself.
   programs = {
     home-manager.enable = true;
-    nixneovim.enable = true;
+    nixneovim = {
+      enable = true;
+      plugins = {
+        treesitter = {
+	  enable = true;
+	  installAllGrammars = true;
+	};
+      };
+      colorschemes = {
+        tokyonight = {
+          enable = true;
+	  style = "storm";
+	};
+      };
+    };
   };
 
 }
