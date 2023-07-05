@@ -72,15 +72,15 @@
       enable = true;
       plugins = {
         treesitter = {
-	  enable = true;
-	  installAllGrammars = true;
-	};
+          enable = true;
+          installAllGrammars = true;
+        };
       };
       colorschemes = {
         tokyonight = {
           enable = true;
-	  style = "storm";
-	};
+          style = "storm";
+        };
       };
     };
   };
