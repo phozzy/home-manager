@@ -74,6 +74,15 @@
         treesitter = {
           enable = true;
           installAllGrammars = true;
+          folding = true;
+          incrementalSelection.enable = true;
+          indent = true;
+          refactor = {
+            highlightCurrentScope.enable = true;
+            highlightDefinitions.enable = true;
+            navigation.enable = true;
+            smartRename.enable = true;
+          };
         };
       };
       colorschemes = {
