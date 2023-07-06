@@ -90,6 +90,11 @@
         tokyonight = {
           enable = true;
           style = "storm";
+          darkFloat = true;
+          darkSidebar = true;
+          italicComments = true;
+          italicKeywords = true;
+          terminalColors = true;
         };
       };
     };
