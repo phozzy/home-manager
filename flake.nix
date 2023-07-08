@@ -3,7 +3,7 @@
 
   inputs = {
     # Specify the source of Home Manager and Nixpkgs.
-    nixneovim.url = "github:nixneovim/nixneovim";
+    nixvim.url = "github:pta2002/nixvim";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -12,7 +12,7 @@
   };
 
   outputs = {
-    nixneovim,
+    nixvim,
     nixpkgs,
     home-manager,
     ... }:
@@ -21,7 +21,6 @@
       pkgs = import nixpkgs {
         inherit system;
         overlays = [
-          nixneovim.overlays.default
         ];
       };
     in {
@@ -31,7 +30,7 @@
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
         modules = [
-          nixneovim.nixosModules.default
+          nixvim.homeManagerModules.nixvim
           ./home.nix
         ];
 

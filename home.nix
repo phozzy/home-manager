@@ -69,34 +69,8 @@
   # Let Home Manager install and manage itself.
   programs = {
     home-manager.enable = true;
-    nixneovim = {
+    nixvim = {
       enable = true;
-      plugins = {
-        treesitter = {
-          enable = true;
-          installAllGrammars = true;
-          folding = true;
-          incrementalSelection.enable = true;
-          indent = true;
-          refactor = {
-            highlightCurrentScope.enable = true;
-            highlightDefinitions.enable = true;
-            navigation.enable = true;
-            smartRename.enable = true;
-          };
-        };
-      };
-      colorschemes = {
-        tokyonight = {
-          enable = true;
-          style = "storm";
-          darkFloat = true;
-          darkSidebar = true;
-          italicComments = true;
-          italicKeywords = true;
-          terminalColors = true;
-        };
-      };
     };
   };
 
