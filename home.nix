@@ -78,6 +78,9 @@
       plugins = {
         treesitter = {
           enable = true;
+          folding = true;
+          incrementalSelection.enable = true;
+          indent = true;
         };
       };
     };
