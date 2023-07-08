@@ -82,6 +82,7 @@
           incrementalSelection.enable = true;
           indent = true;
         };
+        treesitter-rainbow.enable = true;
       };
     };
   };
