@@ -71,6 +71,10 @@
     home-manager.enable = true;
     nixvim = {
       enable = true;
+      colorschemes.catppuccin = {
+        enable = true;
+        flavour = "frappe";
+      };
     };
   };
 
