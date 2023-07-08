@@ -86,6 +86,7 @@
           indent = true;
         };
         treesitter-rainbow.enable = true;
+        which-key.enable = true;
       };
     };
   };
