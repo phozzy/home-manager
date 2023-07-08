@@ -74,6 +74,9 @@
       colorschemes.catppuccin = {
         enable = true;
         flavour = "frappe";
+        integrations = {
+          treesitter = true;
+        };
       };
       plugins = {
         treesitter = {
