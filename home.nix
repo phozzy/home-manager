@@ -75,6 +75,11 @@
         enable = true;
         flavour = "frappe";
       };
+      plugins = {
+        treesitter = {
+          enable = true;
+        };
+      };
     };
   };
 
