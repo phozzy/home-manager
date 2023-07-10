@@ -73,6 +73,13 @@
     home-manager.enable = true;
     nixvim = {
       enable = true;
+      globals = {
+        # Set leader key
+        mapleader = " ";
+        maplocalleader = " ";
+        # Fix markdown indentation settings
+        markdown_recommended_style = 0;
+      };
       options = {
         # Enable auto write
         autowrite = true;
