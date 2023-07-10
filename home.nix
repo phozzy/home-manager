@@ -73,6 +73,87 @@
     home-manager.enable = true;
     nixvim = {
       enable = true;
+      options = {
+        # Enable auto write
+        autowrite = true;
+        # Hide * markup for bold and italic
+        conceallevel = 3;
+        # Confirm to save changes before exiting modified buffer
+        confirm = true;
+        # Show line numbers
+        number = true;
+        # Enable highlighting of the current line
+        cursorline = true;
+        # Show some invisible characters (tabs...
+        list = true;
+        # Use spaces instead of tabs
+        expandtab = true;
+        # Round indent
+        shiftround = true;
+        # Size of an indent
+        shiftwidth = 2;
+        # Stop sign for lines greater than 80 symbols
+        colorcolumn = "80";
+        # Sync with system clipboard
+        clipboard = "unnamedplus";
+        # ...
+        completeopt = "menu,menuone,noselect";
+        # tcqj
+        formatoptions = "jcroqlnt";
+        # ...
+        grepformat = "%f:%l:%c:%m";
+        # ...
+        grepprg = "rg --vimgrep";
+        # Ignore case
+        ignorecase = true;
+        # Preview incremental substitute
+        inccommand = "nosplit";
+        # ...
+        laststatus = 0;
+        # Enable mouse mode
+        mouse = "a";
+        # Popup blend
+        pumblend = 10;
+        # Maximum number of entries in a popup
+        pumheight = 10;
+        # Lines of context
+        scrolloff = 4;
+        # Columns of context
+        sidescrolloff = 8;
+        # TDDO! Change to false after status line installed
+        showmode = true;
+        # Always show the signcolumn, otherwise it would shift the text each time
+        signcolumn = "yes";
+        # Don't ignore case with capitals
+        smartcase = true;
+        # Insert indents automatically
+        smartindent = true;
+        # Put new windows below current
+        splitbelow = true;
+        # Put new windows right of current
+        splitright = true;
+        # Number of spaces tabs count for
+        tabstop = 2;
+        # True color support
+        termguicolors = true;
+        # ...
+        timeoutlen = 300;
+        # Use undofile
+        undofile = true;
+        # Undo's to remember
+        undolevels = 10000;
+        # Save swap file and trigger CursorHold
+        updatetime = 200;
+        # Command-line completion mode
+        wildmode = "longest:full,full";
+        # Minimum window width
+        winminwidth = 5;
+      };
+      extraConfigLuaPre = ''
+        vim.opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize" }
+        vim.opt.spelllang = { "en" }
+        vim.opt.shortmess:append({ W = true, I = true, c = true })
+      '';
       colorschemes.catppuccin = {
         enable = true;
         flavour = "frappe";
