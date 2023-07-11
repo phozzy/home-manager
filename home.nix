@@ -173,6 +173,7 @@
         flavour = "frappe";
         integrations = {
           treesitter = true;
+          telescope = true;
         };
       };
       plugins = {
@@ -184,6 +185,13 @@
         };
         treesitter-rainbow.enable = true;
         which-key.enable = true;
+        telescope = {
+          enable = true;
+          extensions = {
+            file_browser.enable = true;
+            frecency.enable = true;
+          };
+        };
       };
     };
   };
