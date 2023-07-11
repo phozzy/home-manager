@@ -155,10 +155,17 @@
         wildmode = "longest:full,full";
         # Minimum window width
         winminwidth = 5;
+        # ...
+        sessionoptions = [
+          "buffers"
+          "curdir"
+          "tabpages"
+          "winsize"
+        ];
+        # ...
+        spelllang = [ "en" ];
       };
       extraConfigLuaPre = ''
-        vim.opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize" }
-        vim.opt.spelllang = { "en" }
         vim.opt.shortmess:append({ W = true, I = true, c = true })
       '';
       colorschemes.catppuccin = {
