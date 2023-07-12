@@ -75,8 +75,8 @@
       enable = true;
       globals = {
         # Set leader key
-        mapleader = " ";
-        maplocalleader = " ";
+        mapleader = "\\";
+        maplocalleader = "\\";
         # Fix markdown indentation settings
         markdown_recommended_style = 0;
       };
