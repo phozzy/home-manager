@@ -196,6 +196,7 @@
             "<leader>fh" = "help_tags";
           };
         };
+        neo-tree.enable = true;
         lsp = {
           enable = true;
         };
