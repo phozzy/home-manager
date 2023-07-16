@@ -217,6 +217,11 @@
             yamlls.enable = true;
           };
         };
+        indent-blankline = {
+          enable = true;
+          useTreesitter = true;
+          useTreesitterScope = true;
+        };
       };
     };
   };
