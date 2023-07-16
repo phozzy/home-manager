@@ -174,6 +174,9 @@
         integrations = {
           treesitter = true;
           telescope = true;
+          neotree = true;
+          ts_rainbow = true;
+          which_key =true;
         };
       };
       plugins = {
