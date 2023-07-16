@@ -200,9 +200,7 @@
         lsp = {
           enable = true;
           servers = {
-            # bashls.enable = true; # npm wrong flag???
             gopls.enable = true;
-            # jsonls.enable = true; # vscode???
             lua-ls.enable = true;
             nil_ls.enable = true;
             nixd.enable = true;
