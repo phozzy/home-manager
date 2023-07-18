@@ -217,10 +217,75 @@
             yamlls.enable = true;
           };
         };
+        lspkind.enable = true;
         indent-blankline = {
           enable = true;
           useTreesitter = true;
           useTreesitterScope = true;
+        };
+        nvim-autopairs.enable = true;
+        luasnip = {
+          enable = true;
+          fromVscode = [ { } ];
+        };
+        cmp-buffer.enable = true;
+        cmp-cmdline.enable = true;
+        cmp-cmdline-history.enable = true;
+        cmp_luasnip.enable = true;
+        cmp-nvim-lsp.enable = true;
+        cmp-nvim-lsp-document-symbol.enable = true;
+        cmp-nvim-lsp-signature-help.enable = true;
+        cmp-nvim-lua.enable = true;
+        cmp-omni.enable = true;
+        cmp-path.enable = true;
+        cmp-treesitter.enable = true;
+        nvim-cmp = {
+          enable = true;
+          snippet.expand = "luasnip";
+          mapping = {
+            "<C-n>" = ''
+              cmp.mapping.select_next_item({
+                behavior = cmp.SelectBehavior.Insert
+              })
+            '';
+            "<C-p>" = ''
+              cmp.mapping.select_prev_item({
+                behavior = cmp.SelectBehavior.Insert
+              })
+            '';
+            "<C-b>" = ''
+              cmp.mapping.scroll_docs(-4)
+            '';
+            "<C-f>" = ''
+              cmp.mapping.scroll_docs(4)
+            '';
+            "<C-Space>" = ''
+              cmp.mapping.complete()
+            '';
+            "<C-e>" = ''
+              cmp.mapping.abort()
+            '';
+            "<CR>" = ''
+              cmp.mapping.confirm({
+                select = true
+              })
+            '';
+            "<S-CR>" = ''
+              cmp.mapping.confirm({
+                behavior = cmp.ConfirmBehavior.Replace,
+                select = true,
+              })
+            '';
+          };
+          mappingPresets = [
+            "insert"
+          ];
+          sources = [
+            { name = "nvim_lsp"; }
+            { name = "luasnip"; }
+            { name = "path"; }
+            { name = "buffer"; }
+          ];
         };
       };
     };
