@@ -178,6 +178,7 @@
         flavour = "frappe";
         integrations = {
           treesitter = true;
+          treesitter_context = true;
           telescope = true;
           neotree = true;
           ts_rainbow = true;
