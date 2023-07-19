@@ -181,6 +181,7 @@
           treesitter_context = true;
           telescope = true;
           neotree = true;
+          notify = true;
           ts_rainbow = true;
           which_key =true;
         };
@@ -218,6 +219,7 @@
             "<leader>fh" = "help_tags";
           };
         };
+        notify.enable = true;
         neo-tree.enable = true;
         lsp = {
           enable = true;
