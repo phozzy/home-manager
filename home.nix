@@ -222,8 +222,9 @@
         };
         gitsigns = {
           enable = true;
-          currentLineBlame =true;
+          currentLineBlame = true;
         };
+        neogit.enable = true;
         notify.enable = true;
         neo-tree.enable = true;
         lsp = {
