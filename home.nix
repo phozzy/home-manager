@@ -190,6 +190,7 @@
           folding = true;
           incrementalSelection.enable = true;
           indent = true;
+          nixvimInjections = true;
         };
         treesitter-rainbow.enable = true;
         which-key.enable = true;
