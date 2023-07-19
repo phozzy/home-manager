@@ -180,6 +180,7 @@
           treesitter = true;
           treesitter_context = true;
           telescope = true;
+          gitsigns = true;
           neotree = true;
           notify = true;
           ts_rainbow = true;
@@ -218,6 +219,10 @@
             "<leader>fb" = "buffers";
             "<leader>fh" = "help_tags";
           };
+        };
+        gitsigns = {
+          enable = true;
+          currentLineBlame =true;
         };
         notify.enable = true;
         neo-tree.enable = true;
