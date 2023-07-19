@@ -195,6 +195,17 @@
         };
         treesitter-context.enable = true;
         treesitter-rainbow.enable = true;
+        treesitter-refactor = {
+          enable = true;
+          highlightCurrentScope.enable = true;
+          highlightDefinitions.enable = true;
+          navigation = {
+            enable = true;
+          };
+          smartRename = {
+            enable = true;
+          };
+        };
         which-key.enable = true;
         telescope = {
           enable = true;
