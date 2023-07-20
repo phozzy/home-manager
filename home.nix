@@ -209,8 +209,19 @@
         end
       '';
       maps = {
+        normal."<leader><space>" = {
+          lua = true;
+          action = ''
+            function()
+              require('telescope').extensions.file_browser.file_browser()
+            end
+          '';
+        };
+        normal."<leader>f" = {
+          desc = "+find";
+        };
         normal."<leader>g" = {
-          desc = "+Neogit";
+          desc = "+git/GoTo";
         };
         normal."<leader>gg" = {
           lua = true;
@@ -275,6 +286,7 @@
         telescope = {
           enable = true;
           extensions = {
+            file_browser.enable = true;
           };
           keymaps = {
             "<leader>ff" = "find_files";
