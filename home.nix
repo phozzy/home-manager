@@ -173,6 +173,7 @@
           return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
         end
         local get_root = function()
+          local root_patterns = { ".git", "lua" }
           ---@type string?
           local path = vim.api.nvim_buf_get_name(0)
           path = path ~= "" and vim.loop.fs_realpath(path) or nil
@@ -200,13 +201,38 @@
           if not root then
             path = path and vim.fs.dirname(path) or vim.loop.cwd()
             ---@type string?
-            root = vim.fs.find(M.root_patterns, { path = path, upward = true })[1]
+            root = vim.fs.find(root_patterns, { path = path, upward = true })[1]
             root = root and vim.fs.dirname(root) or vim.loop.cwd()
           end
           ---@cast root string
           return root
         end
       '';
+      maps = {
+        normal."<leader>gg" = {
+          lua = true;
+          action = ''
+            function()
+              require('neogit').open({
+                kind = 'tab',
+                cwd = get_root(),
+              })
+            end
+          '';
+          desc = "Neogit (root dir)";
+        };
+        normal."<leader>gG" = {
+          lua = true;
+          action = ''
+            function()
+              require('neogit').open({
+                kind = 'tab',
+              })
+            end
+          '';
+          desc = "Neogit (cwd)";
+        };
+      };
       colorschemes.catppuccin = {
         enable = true;
         flavour = "frappe";
