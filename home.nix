@@ -209,13 +209,27 @@
         end
       '';
       maps = {
+        # Telescope file_browser
         normal."<leader><space>" = {
           lua = true;
           action = ''
             function()
-              require('telescope').extensions.file_browser.file_browser()
+              require('telescope').extensions.file_browser.file_browser({
+                cwd = get_root(),
+              })
             end
           '';
+          desc = "Telescope file_browser (root_dir)";
+        };
+        normal."<leader><S-space>" = {
+          lua = true;
+          action = ''
+            function()
+              require('telescope').extensions.file_browser.file_browser({
+              })
+            end
+          '';
+          desc = "Telescope file_browser (cwd)";
         };
         normal."<leader>f" = {
           desc = "+find";
