@@ -209,6 +209,9 @@
         end
       '';
       maps = {
+        normal."<leader>g" = {
+          desc = "+Neogit";
+        };
         normal."<leader>gg" = {
           lua = true;
           action = ''
