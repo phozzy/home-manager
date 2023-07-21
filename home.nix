@@ -272,6 +272,46 @@
           '';
           desc = "Buffers";
         };
+        normal."<leader>ff" = {
+          lua = true;
+          action = ''
+            function()
+              require('telescope.builtin').find_files({
+                cwd = get_root(),
+              })
+            end
+          '';
+          desc = "Find Files (root dir)";
+        };
+        normal."<leader>fF" = {
+          lua = true;
+          action = ''
+            function()
+              require('telescope.builtin').find_files()
+            end
+          '';
+          desc = "Find Files (cwd)";
+        };
+        normal."<leader>fr" = {
+          lua = true;
+          action = ''
+            function()
+              require('telescope.builtin').oldfiles()
+            end
+          '';
+          desc = "Recent";
+        };
+        normal."<leader>fR" = {
+          lua = true;
+          action = ''
+            function()
+              require('telescope.builtin').oldfiles({
+                    cwd = vim.loop.cwd(),
+                  })
+            end
+          '';
+          desc = "Recent (cwd)";
+        };
         normal."<leader>g" = {
           desc = "+git/GoTo";
         };
