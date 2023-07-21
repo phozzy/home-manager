@@ -214,11 +214,29 @@
           action = ''
             function()
               require('telescope.builtin').buffers({
-                show_all_buffers = true;
+                show_all_buffers = true,
               })
             end
           '';
           desc = "Switch Buffer";
+        };
+        normal."<leader>/" = {
+          lua = true;
+          action = ''
+            function()
+              require('telescope.builtin').live_grep()
+            end
+          '';
+          desc = "Grep (root dir)";
+        };
+        normal."<leader>:" = {
+          lua = true;
+          action = ''
+            function()
+              require('telescope.builtin').command_history()
+            end
+          '';
+          desc = "Command History";
         };
         # Telescope file_browser
         normal."<leader><space>" = {
@@ -244,6 +262,15 @@
         };
         normal."<leader>f" = {
           desc = "+find";
+        };
+        normal."<leader>fb" = {
+          lua = true;
+          action = ''
+            function()
+              require('telescope.builtin').buffers()
+            end
+          '';
+          desc = "Buffers";
         };
         normal."<leader>g" = {
           desc = "+git/GoTo";
@@ -314,12 +341,6 @@
           enable = true;
           extensions = {
             file_browser.enable = true;
-          };
-          keymaps = {
-            "<leader>ff" = "find_files";
-            "<leader>fg" = "live_grep";
-            "<leader>fb" = "buffers";
-            "<leader>fh" = "help_tags";
           };
         };
         gitsigns = {
