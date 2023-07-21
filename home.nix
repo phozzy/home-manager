@@ -209,6 +209,17 @@
         end
       '';
       maps = {
+        normal."<leader>," = {
+          lua = true;
+          action = ''
+            function()
+              require('telescope.builtin').buffers({
+                show_all_buffers = true;
+              })
+            end
+          '';
+          desc = "Switch Buffer";
+        };
         # Telescope file_browser
         normal."<leader><space>" = {
           lua = true;
