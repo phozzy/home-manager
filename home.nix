@@ -280,6 +280,7 @@
           treesitter_context = true;
           telescope = true;
           gitsigns = true;
+          lsp_trouble = true;
           neotree = true;
           notify = true;
           ts_rainbow = true;
@@ -307,6 +308,7 @@
             enable = true;
           };
         };
+        trouble.enable = true;
         which-key.enable = true;
         telescope = {
           enable = true;
@@ -323,6 +325,7 @@
         gitsigns = {
           enable = true;
           currentLineBlame = true;
+          trouble = true;
         };
         neogit.enable = true;
         notify.enable = true;
