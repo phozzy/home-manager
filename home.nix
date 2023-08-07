@@ -272,6 +272,24 @@
           '';
           desc = "Buffers";
         };
+        normal."<leader>fe" = {
+          lua = true;
+          action = ''
+            function()
+              require("neo-tree.command").execute({ toggle = true, dir = get_root() })
+            end
+          '';
+          desc = "Explorer NeoTree (root dir)";
+        };
+        normal."<leader>fE" = {
+          lua = true;
+          action = ''
+            function()
+              require("neo-tree.command").execute({ toggle = true, dir = vim.loop.cwd() })
+            end
+          '';
+          desc = "Explorer NeoTree (cwd)";
+        };
         normal."<leader>ff" = {
           lua = true;
           action = ''
