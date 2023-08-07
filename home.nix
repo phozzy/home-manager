@@ -354,6 +354,15 @@
         normal."<leader>g" = {
           desc = "+git/GoTo";
         };
+        normal."<leader>gc" = {
+          lua = true;
+          action = ''
+            function()
+              require("telescope.builtin").git_commits()
+            end
+          '';
+          desc = "commits";
+        };
         normal."<leader>gg" = {
           lua = true;
           action = ''
