@@ -261,7 +261,7 @@
           desc = "Telescope file_browser (cwd)";
         };
         normal."<leader>f" = {
-          desc = "+find";
+          desc = "+file/find";
         };
         normal."<leader>fb" = {
           lua = true;
