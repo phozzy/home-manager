@@ -209,6 +209,21 @@
         end
       '';
       maps = {
+        normal."g" = {
+          desc = "+goto";
+        };
+        normal."gz" = {
+          desc = "+surround";
+        };
+        normal."]" = {
+          desc = "+next";
+        };
+        normal."[" = {
+          desc = "+prev";
+        };
+        normal."<leader><tab>" = {
+          desc = "+tabs";
+        };
         normal."<leader>," = {
           lua = true;
           action = ''
@@ -259,6 +274,12 @@
             end
           '';
           desc = "Telescope file_browser (cwd)";
+        };
+        normal."<leader>b" = {
+          desc = "+buffer";
+        };
+        normal."<leader>c" = {
+          desc = "+code";
         };
         normal."<leader>f" = {
           desc = "+file/find";
@@ -358,6 +379,21 @@
         };
         normal."<leader>gh" = {
           desc = "+hunks";
+        };
+        normal."<leader>q" = {
+          desc = "+quit/session";
+        };
+        normal."<leader>s" = {
+          desc = "+search";
+        };
+        normal."<leader>u" = {
+          desc = "+ui";
+        };
+        normal."<leader>w" = {
+          desc = "+windows";
+        };
+        normal."<leader>x" = {
+          desc = "+diagnostics/quickfix";
         };
       };
       colorschemes.catppuccin = {
