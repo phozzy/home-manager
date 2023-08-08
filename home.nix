@@ -431,6 +431,15 @@
           '';
           desc = "Buffer";
         };
+        normal."<leader>sc" = {
+          lua = true;
+          action = ''
+            function()
+              require("telescope.builtin").command_history()
+            end
+          '';
+          desc = "Command History";
+        };
         normal."<leader>u" = {
           desc = "+ui";
         };
