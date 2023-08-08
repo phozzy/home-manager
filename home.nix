@@ -389,6 +389,15 @@
         normal."<leader>gh" = {
           desc = "+hunks";
         };
+        normal."<leader>gs" = {
+          lua = true;
+          action = ''
+            function()
+              require("telescope.builtin").git_status()
+            end
+          '';
+          desc = "status";
+        };
         normal."<leader>q" = {
           desc = "+quit/session";
         };
