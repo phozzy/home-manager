@@ -413,6 +413,15 @@
           '';
           desc = "Regitsters";
         };
+        normal."<leader>sa" = {
+          lua = true;
+          action = ''
+            function()
+              require("telescope.builtin").autocommands()
+            end
+          '';
+          desc = "Auto Commands";
+        };
         normal."<leader>u" = {
           desc = "+ui";
         };
