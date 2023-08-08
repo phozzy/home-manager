@@ -404,6 +404,15 @@
         normal."<leader>s" = {
           desc = "+search";
         };
+        normal."<leader>s\"" = {
+          lua = true;
+          action = ''
+            function()
+              require("telescope.builtin").registers()
+            end
+          '';
+          desc = "Regitsters";
+        };
         normal."<leader>u" = {
           desc = "+ui";
         };
