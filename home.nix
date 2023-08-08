@@ -422,6 +422,15 @@
           '';
           desc = "Auto Commands";
         };
+        normal."<leader>sb" = {
+          lua = true;
+          action = ''
+            function()
+              require("telescope.builtin").current_buffer_fuzzy_find()
+            end
+          '';
+          desc = "Buffer";
+        };
         normal."<leader>u" = {
           desc = "+ui";
         };
