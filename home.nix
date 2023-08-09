@@ -489,6 +489,15 @@
           '';
           desc = "Grep (cwd)";
         };
+        normal."<leader>sh" = {
+          lua = true;
+          action = ''
+            function()
+              require('telescope.builtin').help_tags()
+            end
+          '';
+          desc = "Help Pages";
+        };
         normal."<leader>u" = {
           desc = "+ui";
         };
