@@ -469,6 +469,26 @@
           '';
           desc = "Workspace diagnostics";
         };
+        normal."<leader>sg" = {
+          lua = true;
+          action = ''
+            function()
+              require('telescope.builtin').live_grep()
+            end
+          '';
+          desc = "Grep (root dir)";
+        };
+        normal."<leader>sG" = {
+          lua = true;
+          action = ''
+            function()
+              require('telescope.builtin').live_grep({
+                cwd = false,
+              })
+            end
+          '';
+          desc = "Grep (cwd)";
+        };
         normal."<leader>u" = {
           desc = "+ui";
         };
