@@ -449,6 +449,26 @@
           '';
           desc = "Commands";
         };
+        normal."<leader>sd" = {
+          lua = true;
+          action = ''
+            function()
+              require("telescope.builtin").diagnostics({
+                bufnr = 0,
+              })
+            end
+          '';
+          desc = "Document diagnostics";
+        };
+        normal."<leader>sD" = {
+          lua = true;
+          action = ''
+            function()
+              require("telescope.builtin").diagnostics()
+            end
+          '';
+          desc = "Workspace diagnostics";
+        };
         normal."<leader>u" = {
           desc = "+ui";
         };
