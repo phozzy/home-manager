@@ -440,6 +440,15 @@
           '';
           desc = "Command History";
         };
+        normal."<leader>sC" = {
+          lua = true;
+          action = ''
+            function()
+              require("telescope.builtin").commands()
+            end
+          '';
+          desc = "Commands";
+        };
         normal."<leader>u" = {
           desc = "+ui";
         };
