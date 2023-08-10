@@ -525,6 +525,15 @@
           '';
           desc = "Man Pages";
         };
+        normal."<leader>sm" = {
+          lua = true;
+          action = ''
+            function()
+              require('telescope.builtin').marks()
+            end
+          '';
+          desc = "Jump to Mark";
+        };
         normal."<leader>u" = {
           desc = "+ui";
         };
