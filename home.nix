@@ -543,6 +543,15 @@
           '';
           desc = "Options";
         };
+        normal."<leader>sR" = {
+          lua = true;
+          action = ''
+            function()
+              require('telescope.builtin').resume()
+            end
+          '';
+          desc = "Resume";
+        };
         normal."<leader>u" = {
           desc = "+ui";
         };
