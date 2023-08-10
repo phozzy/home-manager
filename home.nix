@@ -498,6 +498,15 @@
           '';
           desc = "Help Pages";
         };
+        normal."<leader>sH" = {
+          lua = true;
+          action = ''
+            function()
+              require('telescope.builtin').highlights()
+            end
+          '';
+          desc = "Search Highlight Groups";
+        };
         normal."<leader>u" = {
           desc = "+ui";
         };
