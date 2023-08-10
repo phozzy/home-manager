@@ -516,6 +516,15 @@
           '';
           desc = "Key Maps";
         };
+        normal."<leader>sM" = {
+          lua = true;
+          action = ''
+            function()
+              require('telescope.builtin').man_pages()
+            end
+          '';
+          desc = "Man Pages";
+        };
         normal."<leader>u" = {
           desc = "+ui";
         };
