@@ -507,6 +507,15 @@
           '';
           desc = "Search Highlight Groups";
         };
+        normal."<leader>sk" = {
+          lua = true;
+          action = ''
+            function()
+              require('telescope.builtin').keymaps()
+            end
+          '';
+          desc = "Key Maps";
+        };
         normal."<leader>u" = {
           desc = "+ui";
         };
