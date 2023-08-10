@@ -534,6 +534,15 @@
           '';
           desc = "Jump to Mark";
         };
+        normal."<leader>so" = {
+          lua = true;
+          action = ''
+            function()
+              require('telescope.builtin').vim_options()
+            end
+          '';
+          desc = "Options";
+        };
         normal."<leader>u" = {
           desc = "+ui";
         };
