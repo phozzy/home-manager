@@ -278,6 +278,24 @@
         normal."<leader>b" = {
           desc = "+buffer";
         };
+        normal."<leader>bd" = {
+          lua = true;
+          action = ''
+            function()
+              require("mini.bufremove").delete(0, false)
+            end
+          '';
+          desc = "Delete Buffer";
+        };
+        normal."<leader>bD" = {
+          lua = true;
+          action = ''
+            function()
+              require("mini.bufremove").delete(0, true)
+            end
+          '';
+          desc = "Delete Buffer (Force)";
+        };
         normal."<leader>c" = {
           desc = "+code";
         };
@@ -751,6 +769,12 @@
             { name = "path"; }
             { name = "buffer"; }
           ];
+        };
+        mini = {
+          enable = true;
+          modules = {
+            bufremove = {};
+          };
         };
       };
     };
