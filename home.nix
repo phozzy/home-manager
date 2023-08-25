@@ -652,6 +652,7 @@
         };
         neogit.enable = true;
         notify.enable = true;
+        noice. enable = true;
         neo-tree.enable = true;
         lsp = {
           enable = true;
