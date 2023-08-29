@@ -610,7 +610,7 @@
           nixvimInjections = true;
         };
         treesitter-context.enable = true;
-        treesitter-rainbow.enable = true;
+        rainbow-delimiters.enable = true;
         treesitter-refactor = {
           enable = true;
           highlightCurrentScope.enable = true;
