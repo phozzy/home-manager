@@ -23,7 +23,8 @@
         overlays = [
         ];
       };
-      currentUser = nixpkgs.lib.users.current;
+      users = builtins.currentSystem.users;
+      currentUser = users.current;
       userName = currentUser.name;
       homeDirectory = currentUser.home;
     in {
