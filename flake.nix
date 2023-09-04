@@ -23,8 +23,11 @@
         overlays = [
         ];
       };
+      currentUser = lib.getAttr "currentSystem" lib.users;
+      userName = currentUser.name;
+      homeDirectory = currentUser.home;
     in {
-      homeConfigurations."deck" = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations."${userName}" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
         # Specify your home configuration modules here, for example,
