@@ -23,10 +23,8 @@
         overlays = [
         ];
       };
-      users = builtins.currentSystem.users;
-      currentUser = users.current;
-      userName = currentUser.name;
-      homeDirectory = currentUser.home;
+      userName = builtins.getenv "USER";
+      homeDirectory = builtins.getenv "HOME";
     in {
       homeConfigurations."${userName}" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
