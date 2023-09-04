@@ -12,6 +12,7 @@
   };
 
   outputs = {
+    lib,
     nixvim,
     nixpkgs,
     home-manager,
