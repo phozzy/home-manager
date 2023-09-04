@@ -12,7 +12,6 @@
   };
 
   outputs = {
-    lib,
     nixvim,
     nixpkgs,
     home-manager,
@@ -24,6 +23,7 @@
         overlays = [
         ];
       };
+      lib = nixpkgs.lib;
       currentUser = lib.getAttr "currentSystem" lib.users;
       userName = currentUser.name;
       homeDirectory = currentUser.home;
